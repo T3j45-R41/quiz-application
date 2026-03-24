@@ -8,8 +8,6 @@ public class QuestionManager {
     public QuestionManager(){
         quesbank=new ArrayList<>();
     }
-
-    //add question
     public void addQues(Question q){
         for(Question ques:quesbank){
             if(ques.getquesId()==q.getquesId()){
@@ -22,12 +20,10 @@ public class QuestionManager {
         }
     
 
-    //display all question
     public List<Question> getAllques(){
         return new ArrayList<>(quesbank);
     }
 
-    //to get questions by id
     public Question getquesbyId(int id){
         for(Question q:quesbank){
             if(id==q.getquesId())
@@ -36,7 +32,6 @@ public class QuestionManager {
     return null;
     }
 
-    //delete question
      public boolean deleteQues(int id){
         Iterator<Question> it=quesbank.iterator();
         
@@ -50,7 +45,6 @@ public class QuestionManager {
         return false;
     }
 
-    //update a question
     public boolean updateQues(int id,Question newq){
         for(int i=0;i<quesbank.size();i++){
             if(quesbank.get(i).getquesId()==id){
@@ -61,7 +55,6 @@ public class QuestionManager {
         return false;
     }
 
-    //filtering by difficulty
     public List<Question> getBydifficulty(Question.Difficulty diff){
         List<Question> res=new ArrayList<>();
         for(Question q:quesbank){
@@ -71,7 +64,6 @@ public class QuestionManager {
         return res;
     }
 
-    //filtering by category
     public List<Question> getBycategory(Question.Category category){
         List<Question> res=new ArrayList<>();
         for(Question q:quesbank){
@@ -81,7 +73,6 @@ public class QuestionManager {
         return res;
     }
 
-    //random questions
     public List<Question> getRandom(int n){
         List<Question> random=new ArrayList<>(quesbank);
 
@@ -92,7 +83,6 @@ public class QuestionManager {
             return random.subList(0, n);
     }
 
-    //get total ques
     public int getTotal(){
         return quesbank.size();
     }
