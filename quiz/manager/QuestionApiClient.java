@@ -58,7 +58,6 @@ public class QuestionApiClient {
             
             String category = item.getString("category");
             String difficulty = item.getString("difficulty");
-            String type = item.getString("type");
             String questionText = unescapeHtml(item.getString("question"));
             String correctAnswer = unescapeHtml(item.getString("correct_answer"));
             JSONArray incorrectAnswersJson = item.getJSONArray("incorrect_answers");

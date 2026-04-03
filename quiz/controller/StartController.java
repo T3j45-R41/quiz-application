@@ -7,7 +7,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.util.Duration;
 import quiz.SceneManager;
-import quiz.manager.QuestionManager;
 import quiz.model.Question;
 import quiz.model.QuizSession;
 
