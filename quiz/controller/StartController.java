@@ -44,7 +44,16 @@ public class StartController {
         }
 
         int userId = quiz.manager.DatabaseManager.saveUser(name);
+        if (userId == -1) {
+            showError("Failed to start quiz. Could not save user.");
+            return;
+        }
+
         int sessionId = quiz.manager.DatabaseManager.createSession(userId);
+        if (sessionId == -1) {
+            showError("Failed to start quiz. Could not create session.");
+            return;
+        }
 
         QuizSession session = new QuizSession(sessionId, userId, questions);
 
